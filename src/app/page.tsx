@@ -76,7 +76,7 @@ export default function Home() {
         </div>
         <div className="max-w-md mx-auto text-[#333333]">
           <h2 className="text-3xl font-bold mb-2">Login</h2>
-          <p className="mb-6">We'd love to meet you. Kindly provide your details.</p>
+          <p className="mb-6">We&apos;d love to meet you. Kindly provide your details.</p>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
               <div className="flex flex-col space-y-4 mb-6">
