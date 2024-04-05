@@ -4,11 +4,9 @@ import { ReactNode, useState } from "react";
 import Link from "next/link"
 import { Input } from "@/components/ui/input"
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar"
-import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
-import { Button } from "@/components/ui/button"
-import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table"
 import { usePathname, useRouter } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
+import { MessageCircleIcon } from "lucide-react";
 
 interface LayoutProps {
   children: ReactNode
@@ -87,128 +85,23 @@ const Layout = ({ children }: LayoutProps) => {
             </Link>
           </div>
         </div>
-        <div className="flex-1 p-8 bg-[#ffffff]">
-          {children}
-          {/* <div className="flex justify-between items-center mb-10">
-            <Input className="border p-2 rounded-md w-1/3" placeholder="Search anything here..." />
+        <div className="flex-1 p-8 grainy">
+          <div className="flex justify-between items-center mb-10">
+            <Input className="bg-[#E5E5E5] border p-6 rounded-md w-1/3" placeholder="Search anything here..." />
             <div className="flex items-center space-x-4">
               <BellIcon className="h-6 w-6 text-gray-600" />
+              <MessageCircleIcon className="h-6 w-6 text-gray-600" />
               <Avatar>
                 <AvatarImage alt="John Doe" src="https://github.com/shadcn.png" />
                 <AvatarFallback>JD</AvatarFallback>
               </Avatar>
               <div className="text-sm">
-                <div>John Doe</div>
+                <div className="text-[#3F562C] font-bold">John Doe</div>
                 <div className="text-gray-500">Admin</div>
               </div>
             </div>
           </div>
-          <div className="bg-white p-6 rounded-md">
-            <div className="flex justify-between items-center mb-6">
-              <h1 className="text-2xl font-semibold">Users</h1>
-              <div className="text-sm text-gray-500">9 February 2024</div>
-            </div>
-            <div className="flex space-x-4 mb-6">
-              <Select>
-                <SelectTrigger id="date-range">
-                  <SelectValue placeholder="Date Range" />
-                </SelectTrigger>
-                <SelectContent position="popper">
-                  <SelectItem value="today">Today</SelectItem>
-                  <SelectItem value="this_week">This Week</SelectItem>
-                  <SelectItem value="this_month">This Month</SelectItem>
-                </SelectContent>
-              </Select>
-              <Input className="border p-2 rounded-md" placeholder="Select Start Date" />
-              <Input className="border p-2 rounded-md" placeholder="Select End Date" />
-              <Button variant="default">Search</Button>
-              <Button variant="secondary">Filter</Button>
-            </div>
-            <div className="flex space-x-2 mb-4">
-              <Button className="text-xs" variant="ghost">
-                All
-              </Button>
-              <Button className="text-xs" variant="ghost">
-                Incoming
-              </Button>
-              <Button className="text-xs" variant="ghost">
-                Outgoing
-              </Button>
-              <Button className="text-xs" variant="ghost">
-                Failed
-              </Button>
-            </div>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="w-[150px]">USER NAME</TableHead>
-                  <TableHead className="w-[100px]">USER ID</TableHead>
-                  <TableHead className="w-[200px]">EMAIL ADDRESS</TableHead>
-                  <TableHead className="w-[150px]">PHONE NUMBER</TableHead>
-                  <TableHead className="w-[150px]">ADDRESS</TableHead>
-                  <TableHead className="w-[150px]">REGION/STATE</TableHead>
-                  <TableHead />
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="font-medium">JOHN DOE S.</TableCell>
-                  <TableCell>20245W14</TableCell>
-                  <TableCell>johndoe@xyz.com</TableCell>
-                  <TableCell>+2348123456789</TableCell>
-                  <TableCell>₦1,000,000</TableCell>
-                  <TableCell>Lagos West/ Lagos</TableCell>
-                  <TableCell>
-                    <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">JOHN DOE S.</TableCell>
-                  <TableCell>20245W14</TableCell>
-                  <TableCell>johndoe@xyz.com</TableCell>
-                  <TableCell>+2348123456789</TableCell>
-                  <TableCell>₦1,000,000</TableCell>
-                  <TableCell>Lagos West/ Lagos</TableCell>
-                  <TableCell>
-                    <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">JOHN DOE S.</TableCell>
-                  <TableCell>20245W14</TableCell>
-                  <TableCell>johndoe@xyz.com</TableCell>
-                  <TableCell>+2348123456789</TableCell>
-                  <TableCell>₦1,000,000</TableCell>
-                  <TableCell>Lagos West/ Lagos</TableCell>
-                  <TableCell>
-                    <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">JOHN DOE S.</TableCell>
-                  <TableCell>20245W14</TableCell>
-                  <TableCell>johndoe@xyz.com</TableCell>
-                  <TableCell>+2348123456789</TableCell>
-                  <TableCell>₦1,000,000</TableCell>
-                  <TableCell>Lagos West/ Lagos</TableCell>
-                  <TableCell>
-                    <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">JOHN DOE S.</TableCell>
-                  <TableCell>20245W14</TableCell>
-                  <TableCell>johndoe@xyz.com</TableCell>
-                  <TableCell>+2348123456789</TableCell>
-                  <TableCell>₦1,000,000</TableCell>
-                  <TableCell>Lagos West/ Lagos</TableCell>
-                  <TableCell>
-                    <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </div> */}
+          {children}
         </div>
       </div>
     </div>
@@ -327,7 +220,6 @@ function GroupIcon(props: any) {
   )
 }
 
-
 function WalletCardsIcon(props: any) {
   return (
     <svg
@@ -348,7 +240,6 @@ function WalletCardsIcon(props: any) {
     </svg>
   )
 }
-
 
 function LogInIcon(props: any) {
   return (
@@ -371,7 +262,6 @@ function LogInIcon(props: any) {
   )
 }
 
-
 function BarChartIcon(props: any) {
   return (
     <svg
@@ -393,7 +283,6 @@ function BarChartIcon(props: any) {
   )
 }
 
-
 function SettingsIcon(props: any) {
   return (
     <svg
@@ -414,7 +303,6 @@ function SettingsIcon(props: any) {
   )
 }
 
-
 function BellIcon(props: any) {
   return (
     <svg
@@ -434,7 +322,6 @@ function BellIcon(props: any) {
     </svg>
   )
 }
-
 
 function MoreVerticalIcon(props: any) {
   return (
