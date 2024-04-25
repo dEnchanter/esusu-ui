@@ -55,10 +55,10 @@ export function SummaryBox({
               className="h-1 bg-red-500 inline-block rounded"
             ></span>
           </div>
-          <div className="flex justify-between w-full text-xs h-4 overflow-hidden">
+          {/* <div className="flex justify-between w-full text-xs h-4 overflow-hidden">
             <div>{leftRatio}</div>
             <div>{rightRatio}</div>
-          </div>
+          </div> */}
         </>
       )}
     </div>

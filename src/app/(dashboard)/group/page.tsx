@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input"
 import { MoreVerticalIcon } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { DatePickerWithRange } from "@/components/DateRangePicker"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const page = () => {
   return (
@@ -17,10 +18,10 @@ const page = () => {
           <div>
             <DatePickerWithRange />
           </div>
-          <Input className="bg-[#B3B3B3] border p-2 rounded-md w-[15rem]" placeholder="Search anything here..." />
+          <Input className="bg-[#B3B3B3]/50 border p-2 rounded-md w-[15rem]" placeholder="Search anything here..." />
           <Button className="bg-[#3F562C] py-5 px-10">Filter</Button>
         </div>
-        <div className="flex space-x-2 mb-4">
+        <div className="flex space-x-2">
           <Button className="text-xs text-[#3F562C] underline font-extralight" variant="ghost">
             All
           </Button>
@@ -37,67 +38,138 @@ const page = () => {
         <Table>
           <TableHeader className="bg-[#d9d8d8]">
             <TableRow>
-              <TableHead className="w-[150px]">USER NAME</TableHead>
-              <TableHead className="w-[100px]">USER ID</TableHead>
-              <TableHead className="w-[200px]">EMAIL ADDRESS</TableHead>
-              <TableHead className="w-[150px]">PHONE NUMBER</TableHead>
-              <TableHead className="w-[150px]">ADDRESS</TableHead>
-              <TableHead className="w-[150px]">REGION/STATE</TableHead>
+              <TableHead className="w-[200px]">GROUP NAME</TableHead>
+              <TableHead className="w-[150px]">GROUP ID</TableHead>
+              <TableHead className="w-[150px]">CATEGORY</TableHead>
+              <TableHead className="w-[250px]">MEMBERS</TableHead>
+              <TableHead className="w-[150px]">CREATOR</TableHead>
+              <TableHead className="w-[150px]">BALANCE</TableHead>
+              <TableHead className="w-[150px]">STATUS</TableHead>
               <TableHead />
             </TableRow>
           </TableHeader>
           <TableBody className="text-gray-500">
-            <TableRow>
+            <TableRow className="bg-zinc-100">
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell>20245W14</TableCell>
-              <TableCell>johndoe@xyz.com</TableCell>
-              <TableCell>+2348123456789</TableCell>
+              <TableCell>Housing</TableCell>
+              <TableCell className="flex">
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.pn" />
+                  <AvatarFallback>IT</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.pn" />
+                  <AvatarFallback>IS</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.pn" />
+                  <AvatarFallback>GG</AvatarFallback>
+                </Avatar>
+              </TableCell>
+              <TableCell>Sub-Agent</TableCell>
               <TableCell>₦1,000,000</TableCell>
-              <TableCell>Lagos West/ Lagos</TableCell>
+              <TableCell className="text-green-500">Active</TableCell>
               <TableCell>
                 <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
-            <TableRow className="bg-[#ECB1B1]/30 hover:bg-[#ECB1B1]/30">
+            <TableRow className="bg-[#ECB1B1]/10">
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell>20245W14</TableCell>
-              <TableCell>johndoe@xyz.com</TableCell>
-              <TableCell>+2348123456789</TableCell>
+              <TableCell>Travel</TableCell>
+              <TableCell className="flex">
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.pn" />
+                  <AvatarFallback>AM</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.pn" />
+                  <AvatarFallback>WB</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.pn" />
+                  <AvatarFallback>TY</AvatarFallback>
+                </Avatar>
+              </TableCell>
+              <TableCell>Individual</TableCell>
               <TableCell>₦1,000,000</TableCell>
-              <TableCell>Lagos West/ Lagos</TableCell>
+              <TableCell className="text-red-500">Ended</TableCell>
               <TableCell>
                 <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
-            <TableRow className="">
+            <TableRow className="bg-zinc-100">
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell>20245W14</TableCell>
-              <TableCell>johndoe@xyz.com</TableCell>
-              <TableCell>+2348123456789</TableCell>
+              <TableCell>Rent</TableCell>
+              <TableCell className="flex">
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.pn" />
+                  <AvatarFallback>ETH</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.pn" />
+                  <AvatarFallback>AS</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.pn" />
+                  <AvatarFallback>MO</AvatarFallback>
+                </Avatar>
+              </TableCell>
+              <TableCell>Super-Agent</TableCell>
               <TableCell>₦1,000,000</TableCell>
-              <TableCell>Lagos West/ Lagos</TableCell>
+              <TableCell className="text-green-500">Active</TableCell>
               <TableCell>
                 <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
-            <TableRow className="bg-[#ECB1B1]/30 hover:bg-[#ECB1B1]/30">
+            <TableRow className="bg-[#ECB1B1]/10">
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell>20245W14</TableCell>
-              <TableCell>johndoe@xyz.com</TableCell>
-              <TableCell>+2348123456789</TableCell>
+              <TableCell>School Fees</TableCell>
+              <TableCell className="flex">
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.pn" />
+                  <AvatarFallback>AD</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.pn" />
+                  <AvatarFallback>IU</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.pn" />
+                  <AvatarFallback>SU</AvatarFallback>
+                </Avatar>
+              </TableCell>
+              <TableCell>Sub-Agent</TableCell>
               <TableCell>₦1,000,000</TableCell>
-              <TableCell>Lagos West/ Lagos</TableCell>
+              <TableCell className="text-green-500">Active</TableCell>
               <TableCell>
                 <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
-            <TableRow>
+            <TableRow className="bg-zinc-100">
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell>20245W14</TableCell>
-              <TableCell>johndoe@xyz.com</TableCell>
-              <TableCell>+2348123456789</TableCell>
+              <TableCell>Vacation</TableCell>
+              <TableCell className="flex">
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.pn " />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.pn" />
+                  <AvatarFallback>AO</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.pn" />
+                  <AvatarFallback>CG</AvatarFallback>
+                </Avatar>
+              </TableCell>
+              <TableCell>Sub-Agent</TableCell>
               <TableCell>₦1,000,000</TableCell>
-              <TableCell>Lagos West/ Lagos</TableCell>
+              <TableCell className="text-red-500">Ended</TableCell>
               <TableCell>
                 <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>

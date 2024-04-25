@@ -17,10 +17,10 @@ const page = () => {
           <div>
             <DatePickerWithRange />
           </div>
-          <Input className="bg-[#B3B3B3] border p-2 rounded-md w-[15rem]" placeholder="Search anything here..." />
+          <Input className="bg-[#B3B3B3]/50 border p-2 rounded-md w-[15rem]" placeholder="Search anything here..." />
           <Button className="bg-[#3F562C] py-5 px-10">Filter</Button>
         </div>
-        <div className="flex space-x-2 mb-4">
+        <div className="flex space-x-2">
           <Button className="text-xs text-[#3F562C] underline font-extralight" variant="ghost">
             All
           </Button>
@@ -34,11 +34,12 @@ const page = () => {
             Failed
           </Button>
         </div>
-        <Table>
-          <TableHeader className="bg-[#d9d8d8]">
+        <Table className="">
+          <TableHeader className="bg-[#d9d8d8] hover:bg-[#d9d8d8] cursor-pointer">
             <TableRow>
               <TableHead className="w-[150px]">USER NAME</TableHead>
               <TableHead className="w-[100px]">USER ID</TableHead>
+              <TableHead className="w-[100px]">USER ROLE</TableHead>
               <TableHead className="w-[200px]">EMAIL ADDRESS</TableHead>
               <TableHead className="w-[150px]">PHONE NUMBER</TableHead>
               <TableHead className="w-[150px]">ADDRESS</TableHead>
@@ -47,9 +48,10 @@ const page = () => {
             </TableRow>
           </TableHeader>
           <TableBody className="text-gray-500">
-            <TableRow>
+            <TableRow className="bg-zinc-100">
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell>20245W14</TableCell>
+              <TableCell>viewer</TableCell>
               <TableCell>johndoe@xyz.com</TableCell>
               <TableCell>+2348123456789</TableCell>
               <TableCell>₦1,000,000</TableCell>
@@ -58,9 +60,10 @@ const page = () => {
                 <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
-            <TableRow className="bg-[#ECB1B1]/30 hover:bg-[#ECB1B1]/30">
+            <TableRow className="bg-[#ECB1B1]/10">
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell>20245W14</TableCell>
+              <TableCell>viewer</TableCell>
               <TableCell>johndoe@xyz.com</TableCell>
               <TableCell>+2348123456789</TableCell>
               <TableCell>₦1,000,000</TableCell>
@@ -69,9 +72,10 @@ const page = () => {
                 <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
-            <TableRow className="">
+            <TableRow className="bg-zinc-100">
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell>20245W14</TableCell>
+              <TableCell>viewer</TableCell>
               <TableCell>johndoe@xyz.com</TableCell>
               <TableCell>+2348123456789</TableCell>
               <TableCell>₦1,000,000</TableCell>
@@ -80,9 +84,10 @@ const page = () => {
                 <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
-            <TableRow className="bg-[#ECB1B1]/30 hover:bg-[#ECB1B1]/30">
+            <TableRow className="bg-[#ECB1B1]/10">
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell>20245W14</TableCell>
+              <TableCell>viewer</TableCell>
               <TableCell>johndoe@xyz.com</TableCell>
               <TableCell>+2348123456789</TableCell>
               <TableCell>₦1,000,000</TableCell>
@@ -91,9 +96,10 @@ const page = () => {
                 <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
-            <TableRow>
+            <TableRow className="bg-zinc-100">
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell>20245W14</TableCell>
+              <TableCell>viewer</TableCell>
               <TableCell>johndoe@xyz.com</TableCell>
               <TableCell>+2348123456789</TableCell>
               <TableCell>₦1,000,000</TableCell>

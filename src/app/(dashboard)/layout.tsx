@@ -70,14 +70,20 @@ const Layout = ({ children }: LayoutProps) => {
                 <span>Cards</span>
               </div>
             </Link>
-            <Link className="text-[#A5A5A5] hover:text-[#3F562C]" href="/audit-log">
+            <Link className="text-[#A5A5A5] hover:text-[#3F562C]" href="/statistics">
+              <div className={`flex items-center p-3 space-x-3 ${isActive('/statistics') ? 'text-[#3F562C]' : 'text-[#A5A5A5]'}`}>
+                <LogInIcon className="h-5 w-5" />
+                <span>Statistics</span>
+              </div>
+            </Link>
+            <Separator className="bg-[#EC712E]/30 w-full my-3" />
+            <Link onClick={(e) => e.preventDefault()} className="text-[#A5A5A5] hover:text-[#3F562C]" href="/audit-log">
               <div className={`flex items-center p-3 space-x-3 ${isActive('/audit-log') ? 'text-[#3F562C]' : 'text-[#A5A5A5]'}`}>
                 <LogInIcon className="h-5 w-5" />
                 <span>Audit Logs</span>
               </div>
             </Link>
-            <Separator className="bg-[#EC712E]/30 w-full my-3" />
-            <Link className="text-[#A5A5A5] hover:text-[#3F562C]" href="/setting">
+            <Link onClick={(e) => e.preventDefault()} className="text-[#A5A5A5] hover:text-[#3F562C]" href="/setting">
               <div className={`flex items-center p-3 space-x-3 ${isActive('/setting') ? 'text-[#3F562C]' : 'text-[#A5A5A5]'}`}>
                 <SettingsIcon className="h-5 w-5" />
                 <span>Settings</span>

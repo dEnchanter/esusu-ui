@@ -31,8 +31,8 @@ const page = () => {
               style: "currency",
               currency: "NGN",
             }).format(280)}
-            leftRatio={"60"}
-            rightRatio={"40"}
+            // leftRatio={"60"}
+            // rightRatio={"40"}
           />
           <SummaryBox
             title="Transaction Count"
@@ -41,8 +41,8 @@ const page = () => {
             leftValue={"60"}
             rightLabel="Failed"
             rightValue={"40"}
-            leftRatio={"70"}
-            rightRatio={"30"}
+            // leftRatio={"70"}
+            // rightRatio={"30"}
           />
           <SummaryBox
             title="Terminals"
@@ -51,8 +51,8 @@ const page = () => {
             leftValue={"6000"}
             rightLabel="Inactive"
             rightValue={"2500"}
-            leftRatio={"78"}
-            rightRatio={"22"}
+            // leftRatio={"78"}
+            // rightRatio={"22"}
           />
           <SummaryBox
             title="Commission"
@@ -76,10 +76,10 @@ const page = () => {
           <div>
             <DatePickerWithRange />
           </div>
-          <Input className="bg-[#B3B3B3] border p-2 rounded-md w-[15rem]" placeholder="Search anything here..." />
+          <Input className="bg-[#B3B3B3]/50 border p-2 rounded-md w-[15rem]" placeholder="Search anything here..." />
           <Button className="bg-[#3F562C] py-5 px-10">Filter</Button>
         </div>
-        <div className="flex space-x-2 mb-4">
+        <div className="flex space-x-2">
           <Button className="text-xs text-[#3F562C] underline font-extralight" variant="ghost">
             All
           </Button>
@@ -96,67 +96,85 @@ const page = () => {
         <Table>
           <TableHeader className="bg-[#d9d8d8]">
             <TableRow>
-              <TableHead className="w-[150px]">USER NAME</TableHead>
-              <TableHead className="w-[100px]">USER ID</TableHead>
-              <TableHead className="w-[200px]">EMAIL ADDRESS</TableHead>
-              <TableHead className="w-[150px]">PHONE NUMBER</TableHead>
-              <TableHead className="w-[150px]">ADDRESS</TableHead>
-              <TableHead className="w-[150px]">REGION/STATE</TableHead>
+              <TableHead className="w-[150px]">TRANSACTION ID</TableHead>
+              <TableHead className="w-[200px]">AGENT NAME</TableHead>
+              <TableHead className="w-[150px]">AGENT ID</TableHead>
+              <TableHead className="w-[150px]">CUSTOMER</TableHead>
+              <TableHead className="w-[100px]">CUSTOMER ID</TableHead>
+              <TableHead className="w-[150px]">AMOUNT</TableHead>
+              <TableHead className="w-[150px]">PAYMENT TYPE</TableHead>
+              <TableHead className="w-[150px]">STATUS</TableHead>
+              <TableHead className="w-[150px]">DATE/TIME</TableHead>
               <TableHead />
             </TableRow>
           </TableHeader>
           <TableBody className="text-gray-500">
-            <TableRow>
+            <TableRow className="bg-zinc-100">
+              <TableCell>#00001ABCDEF</TableCell>
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell>20245W14</TableCell>
-              <TableCell>johndoe@xyz.com</TableCell>
-              <TableCell>+2348123456789</TableCell>
-              <TableCell>₦1,000,000</TableCell>
-              <TableCell>Lagos West/ Lagos</TableCell>
+              <TableCell>JOHN DOE S.</TableCell>
+              <TableCell>123456</TableCell>
+              <TableCell>₦10,000</TableCell>
+              <TableCell>Bank Transfer</TableCell>
+              <TableCell>Pending</TableCell>
+              <TableCell>7/02/2024</TableCell>
               <TableCell>
                 <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
-            <TableRow className="bg-[#ECB1B1]/30 hover:bg-[#ECB1B1]/30">
+            <TableRow className="bg-[#ECB1B1]/10">
+              <TableCell>#00001ABCDEF</TableCell>
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell>20245W14</TableCell>
-              <TableCell>johndoe@xyz.com</TableCell>
-              <TableCell>+2348123456789</TableCell>
-              <TableCell>₦1,000,000</TableCell>
-              <TableCell>Lagos West/ Lagos</TableCell>
+              <TableCell>JOHN DOE S.</TableCell>
+              <TableCell>123456</TableCell>
+              <TableCell>₦10,000</TableCell>
+              <TableCell>Bank Transfer</TableCell>
+              <TableCell>Pending</TableCell>
+              <TableCell>7/02/2024</TableCell>
               <TableCell>
                 <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
-            <TableRow className="">
+            <TableRow className="bg-zinc-100">
+              <TableCell>#00001ABCDEF</TableCell>
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell>20245W14</TableCell>
-              <TableCell>johndoe@xyz.com</TableCell>
-              <TableCell>+2348123456789</TableCell>
-              <TableCell>₦1,000,000</TableCell>
-              <TableCell>Lagos West/ Lagos</TableCell>
+              <TableCell>JOHN DOE S.</TableCell>
+              <TableCell>123456</TableCell>
+              <TableCell>₦10,000</TableCell>
+              <TableCell>Bank Transfer</TableCell>
+              <TableCell>Pending</TableCell>
+              <TableCell>7/02/2024</TableCell>
               <TableCell>
                 <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
-            <TableRow className="bg-[#ECB1B1]/30 hover:bg-[#ECB1B1]/30">
+            <TableRow className="bg-[#ECB1B1]/10">
+              <TableCell>#00001ABCDEF</TableCell>
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell>20245W14</TableCell>
-              <TableCell>johndoe@xyz.com</TableCell>
-              <TableCell>+2348123456789</TableCell>
-              <TableCell>₦1,000,000</TableCell>
-              <TableCell>Lagos West/ Lagos</TableCell>
+              <TableCell>JOHN DOE S.</TableCell>
+              <TableCell>123456</TableCell>
+              <TableCell>₦10,000</TableCell>
+              <TableCell>Bank Transfer</TableCell>
+              <TableCell>Pending</TableCell>
+              <TableCell>7/02/2024</TableCell>
               <TableCell>
                 <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
-            <TableRow>
+            <TableRow className="bg-zinc-100">
+              <TableCell>#00001ABCDEF</TableCell>
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell>20245W14</TableCell>
-              <TableCell>johndoe@xyz.com</TableCell>
-              <TableCell>+2348123456789</TableCell>
-              <TableCell>₦1,000,000</TableCell>
-              <TableCell>Lagos West/ Lagos</TableCell>
+              <TableCell>JOHN DOE S.</TableCell>
+              <TableCell>123456</TableCell>
+              <TableCell>₦10,000</TableCell>
+              <TableCell>Bank Transfer</TableCell>
+              <TableCell>Pending</TableCell>
+              <TableCell>7/02/2024</TableCell>
               <TableCell>
                 <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
