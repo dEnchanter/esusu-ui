@@ -50,7 +50,7 @@ const page = () => {
               </TableCell>
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell className="">Admin</TableCell>
-              <TableCell>Edited Agent - John Doe's profile</TableCell>
+              <TableCell>Edited Agent - John Doe profile</TableCell>
               <TableCell className="">102.215.57.68</TableCell>
             </TableRow>
             <TableRow className="bg-zinc-100">
@@ -60,7 +60,7 @@ const page = () => {
               </TableCell>
               <TableCell className="font-medium">JOHN DOE S.</TableCell>
               <TableCell className="">Admin</TableCell>
-              <TableCell>Deactivated User - John Doe's Profile</TableCell>
+              <TableCell>Deactivated User - John Doe Profile</TableCell>
               <TableCell className="">102.215.57.68</TableCell>
             </TableRow>
             <TableRow className="bg-[#ECB1B1]/10">
