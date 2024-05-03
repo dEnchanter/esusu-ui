@@ -5,6 +5,7 @@ import { MoreVerticalIcon } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { DatePickerWithRange } from "@/components/DateRangePicker"
 import { SummaryBox } from "@/components/SummaryBox"
+import { currentDate } from "@/helper/date"
 
 const page = () => {
   return (
@@ -12,7 +13,7 @@ const page = () => {
       <Card className="bg-[#E5E5E5] p-6 rounded-md">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-semibold">Transactions</h1>
-          <div className="text-sm text-gray-500">9 February 2024</div>
+          <div className="text-sm text-gray-500">{currentDate()}</div>
         </div>
         <div className="flex justify-between flex-wrap mb-8">
           <SummaryBox

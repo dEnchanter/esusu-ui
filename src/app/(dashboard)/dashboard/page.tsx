@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { DatePickerWithRange } from "@/components/DateRangePicker"
 import { SummaryBox } from "@/components/SummaryBox"
 import { DonutpieChart, TimeseriesChart } from "@/components/component/charts"
+import { currentDate } from "@/helper/date"
 
 const page = () => {
   return (
@@ -15,7 +16,7 @@ const page = () => {
       <Card className="bg-[#E5E5E5] p-6 rounded-md">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-semibold">Welcome back, John Doe</h1>
-          <div className="text-sm text-gray-500">9 February 2024</div>
+          <div className="text-sm text-gray-500">{currentDate()}</div>
         </div>
         <div className="flex justify-between flex-wrap mb-2a">
           <SummaryBox

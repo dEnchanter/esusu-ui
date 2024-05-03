@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { BarChart, CurvedlineChart } from "@/components/component/stats-chart"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { currentDate } from "@/helper/date"
 
 const page = () => {
   return (
@@ -14,7 +15,7 @@ const page = () => {
       <Card className="bg-[#E5E5E5] p-6 rounded-md">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-semibold">Statistics</h1>
-          <div className="text-sm text-gray-500">9 February 2024</div>
+          <div className="text-sm text-gray-500">{currentDate()}</div>
         </div>
         <div className="grid grid-cols-4 gap-4">
           <Card className="bg-[#F0FDF4] p-4">

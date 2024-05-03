@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button"
 import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table"
 import { Input } from "@/components/ui/input"
-import { MoreVerticalIcon } from "lucide-react"
+import { MoreHorizontalIcon } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { DatePickerWithRange } from "@/components/DateRangePicker"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { currentDate } from "@/helper/date"
 
 const page = () => {
   return (
@@ -12,7 +13,7 @@ const page = () => {
       <Card className="bg-[#E5E5E5] p-6 rounded-md">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-semibold">Groups</h1>
-          <div className="text-sm text-gray-500">9 February 2024</div>
+          <div className="text-sm text-gray-500">{currentDate()}</div>
         </div>
         <div className="flex justify-end space-x-4 mb-6">
           <div>
@@ -71,7 +72,7 @@ const page = () => {
               <TableCell>₦1,000,000</TableCell>
               <TableCell className="text-green-500">Active</TableCell>
               <TableCell>
-                <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
+                <MoreHorizontalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
             <TableRow className="bg-[#ECB1B1]/10">
@@ -96,7 +97,7 @@ const page = () => {
               <TableCell>₦1,000,000</TableCell>
               <TableCell className="text-red-500">Ended</TableCell>
               <TableCell>
-                <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
+                <MoreHorizontalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
             <TableRow className="bg-zinc-100">
@@ -121,7 +122,7 @@ const page = () => {
               <TableCell>₦1,000,000</TableCell>
               <TableCell className="text-green-500">Active</TableCell>
               <TableCell>
-                <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
+                <MoreHorizontalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
             <TableRow className="bg-[#ECB1B1]/10">
@@ -146,7 +147,7 @@ const page = () => {
               <TableCell>₦1,000,000</TableCell>
               <TableCell className="text-green-500">Active</TableCell>
               <TableCell>
-                <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
+                <MoreHorizontalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
             <TableRow className="bg-zinc-100">
@@ -171,7 +172,7 @@ const page = () => {
               <TableCell>₦1,000,000</TableCell>
               <TableCell className="text-red-500">Ended</TableCell>
               <TableCell>
-                <MoreVerticalIcon className="h-5 w-5 text-gray-600" />
+                <MoreHorizontalIcon className="h-5 w-5 text-gray-600" />
               </TableCell>
             </TableRow>
           </TableBody>
