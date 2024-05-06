@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { CurrencyIcon, DotIcon, GroupIcon, HelpCircleIcon, MoreVerticalIcon } from "lucide-react"
+import { CalendarDays, CurrencyIcon, DotIcon, GroupIcon, HelpCircleIcon, MoreVerticalIcon } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -14,8 +14,11 @@ const page = () => {
     <div>
       <Card className="bg-[#E5E5E5] p-6 rounded-md">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-semibold">Statistics</h1>
-          <div className="text-sm text-gray-500">{currentDate()}</div>
+          <h1 className="text-3xl font-medium">Statistics</h1>
+          <div className="flex items-center space-x-2 text-sm text-gray-500 border bg-white px-3 py-1">
+            <span><CalendarDays className="h-4 w-4" /></span>
+            <span>{currentDate()}</span>
+          </div>
         </div>
         <div className="grid grid-cols-4 gap-4">
           <Card className="bg-[#F0FDF4] p-4">

@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { MoreVerticalIcon } from 'lucide-react';
+import { CalendarDays, MoreVerticalIcon } from 'lucide-react';
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState('profile');
@@ -28,8 +28,11 @@ const Page = () => {
     <div>
       <Card className="bg-[#E5E5E5] p-6 rounded-md">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-semibold">Settings</h1>
-          <div className="text-sm text-gray-500">{currentDate()}</div>
+          <h1 className="text-3xl font-medium">Settings</h1>
+          <div className="flex items-center space-x-2 text-sm text-gray-500 border bg-white px-3 py-1">
+            <span><CalendarDays className="h-4 w-4" /></span>
+            <span>{currentDate()}</span>
+          </div>
         </div>
         <div className="flex justify-end space-x-4 mb-6">
           <DatePickerWithRange />
@@ -116,7 +119,7 @@ const Page = () => {
         )}
 
         {activeTab === 'team member' && (
-          <Table className="mt-5">
+          <Table className="mt-5 table table-xs">
             <TableHeader className="bg-[#d9d8d8] hover:bg-[#d9d8d8] cursor-pointer">
               <TableRow>
                 <TableHead className="w-[150px]">USER NAME</TableHead>

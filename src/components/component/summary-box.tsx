@@ -1,9 +1,7 @@
 
 import { Card } from "@/components/ui/card"
-import Image from "next/image";
 
 interface SummaryBoxProps {
-  iconSrc: string;
   title: string;
   leftLabel?: string;
   rightLabel?: string;
@@ -15,7 +13,6 @@ interface SummaryBoxProps {
 }
 
 export function SummaryBox({
-  iconSrc,
   title,
   leftLabel,
   rightLabel,
@@ -27,9 +24,9 @@ export function SummaryBox({
 }: SummaryBoxProps) {
   return (
     <Card className="w-[18rem] p-4 flex items-center justify-between bg-white shadow-md rounded-lg dark:bg-gray-800">
-      <div className="flex items-start space-x-4">
+      <div className="flex items-center space-x-4">
         <div className="bg-gray-100 p-3 rounded-lg dark:bg-gray-700">
-          {iconSrc && <Image src={iconSrc} alt="icon" className="h-6 w-6" height="72" width="72" />}
+          <ActivityIcon className="w-6 h-6 text-gray-500 dark:text-gray-400" />
         </div>
         <div>
           <h3 className="text-gray-500 font-medium h-8 overflow-hidden">{title}</h3>
