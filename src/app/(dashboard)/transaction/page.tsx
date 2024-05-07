@@ -11,80 +11,12 @@ import { currentDate } from "@/helper/date"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { ColumnDef, flexRender, getCoreRowModel, useReactTable } from "@tanstack/react-table";
 import { useEffect, useState } from "react"
+import { CustomAlertDialog } from "@/components/CustomAlertDialog"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
 }
-
-const columns: ColumnDef<Transaction>[] = [
-  {
-    accessorKey: 'transactionId',
-    header: 'Transaction ID'
-  },
-  {
-    accessorKey: 'agentName',
-    header: 'Agent Name'
-  },
-  {
-    accessorKey: 'agentId',
-    header: 'Agent ID'
-  },
-  {
-    accessorKey: 'customerName',
-    header: 'Customer'
-  },
-  {
-    accessorKey: 'customerId',
-    header: 'Customer ID'
-  },
-  {
-    accessorKey: 'amount',
-    header: 'Amount',
-    // Cell: ({ value }) => `$${value.toFixed(2)}`
-  },
-  {
-    accessorKey: 'paymentType',
-    header: 'Payment Type'
-  },
-  {
-    accessorKey: 'status',
-    header: 'Status',
-    cell: info => {
-      const status = info.getValue<string>();
-      let color = '';
-      switch (status) {
-        case 'Pending':
-          color = 'text-[#EC712E]';
-          break;
-        case 'Successful':
-          color = 'text-[#008528]';
-          break;
-        case 'Failed':
-          color = 'text-[#F24822]';
-          break;
-        default:
-          color = 'text-gray-500';
-      }
-      return <span className={`${color} font-medium`}>{status}</span>;
-    }
-  },
-  {
-    accessorKey: 'createdAt',
-    header: 'Date/Time'
-  },
-  {
-    id: 'viewProfile',
-    header: 'Actions',
-    cell: (info) => (
-      <div className="flex space-x-2">
-        <MoreVerticalIcon
-          className="text-gray-600 cursor-pointer w-5 h-5"
-        />
-      </div>
-    ),
-  },
-];
 
 async function fetchData() {
   // Simulate an API call
@@ -150,10 +82,22 @@ async function fetchData() {
 const page = () => {
 
   const [data, setData] = useState<Transaction[]>([]);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [selectedTransaction, setSelectedTransaction] = useState<Transaction | null>(null);
 
   useEffect(() => {
     fetchData().then(setData);
   }, []);
+
+  const handleOpenModal = (transaction: Transaction) => {
+    setSelectedTransaction(transaction);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setSelectedTransaction(null);
+  };
 
   function DataTable<TData, TValue>({
     columns,
@@ -229,6 +173,76 @@ const page = () => {
       </Table>
     )
   }
+
+  const columns: ColumnDef<Transaction>[] = [
+    {
+      accessorKey: 'transactionId',
+      header: 'Transaction ID'
+    },
+    {
+      accessorKey: 'agentName',
+      header: 'Agent Name'
+    },
+    {
+      accessorKey: 'agentId',
+      header: 'Agent ID'
+    },
+    {
+      accessorKey: 'customerName',
+      header: 'Customer'
+    },
+    {
+      accessorKey: 'customerId',
+      header: 'Customer ID'
+    },
+    {
+      accessorKey: 'amount',
+      header: 'Amount',
+      // Cell: ({ value }) => `$${value.toFixed(2)}`
+    },
+    {
+      accessorKey: 'paymentType',
+      header: 'Payment Type'
+    },
+    {
+      accessorKey: 'status',
+      header: 'Status',
+      cell: info => {
+        const status = info.getValue<string>();
+        let color = '';
+        switch (status) {
+          case 'Pending':
+            color = 'text-[#EC712E]';
+            break;
+          case 'Successful':
+            color = 'text-[#008528]';
+            break;
+          case 'Failed':
+            color = 'text-[#F24822]';
+            break;
+          default:
+            color = 'text-gray-500';
+        }
+        return <span className={`${color} font-medium`}>{status}</span>;
+      }
+    },
+    {
+      accessorKey: 'createdAt',
+      header: 'Date/Time'
+    },
+    {
+      id: 'viewProfile',
+      header: 'Actions',
+      cell: (info) => (
+        <div className="flex space-x-2">
+          <MoreVerticalIcon
+            className="text-gray-600 cursor-pointer w-5 h-5"
+            onClick={() => handleOpenModal(info.row.original)}
+          />
+        </div>
+      ),
+    },
+  ];
 
   return (
     <div>
@@ -333,6 +347,13 @@ const page = () => {
         </div>
        
         <DataTable columns={columns} data={data || []} />
+        {selectedTransaction && (
+          <CustomAlertDialog
+            isOpen={isModalOpen}
+            onDismiss={handleCloseModal}
+            transaction={selectedTransaction}
+          />
+        )}
       </Card>
     </div>
   )
