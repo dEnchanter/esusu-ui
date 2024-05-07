@@ -120,7 +120,7 @@ async function fetchData() {
   ]
 }
 
-const page = () => {
+const Page = () => {
 
   const [data, setData] = useState<Card[]>([]);
 
@@ -244,4 +244,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

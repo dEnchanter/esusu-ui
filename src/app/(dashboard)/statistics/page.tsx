@@ -9,7 +9,7 @@ import { BarChart, CurvedlineChart } from "@/components/component/stats-chart"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { currentDate } from "@/helper/date"
 
-const page = () => {
+const Page = () => {
   return (
     <div>
       <Card className="bg-[#E5E5E5] p-6 rounded-md">
@@ -176,4 +176,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

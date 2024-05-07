@@ -79,7 +79,7 @@ async function fetchData() {
   ]
 }
 
-const page = () => {
+const Page = () => {
 
   const [data, setData] = useState<Transaction[]>([]);
   const [isModalOpen, setModalOpen] = useState(false);
@@ -359,4 +359,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

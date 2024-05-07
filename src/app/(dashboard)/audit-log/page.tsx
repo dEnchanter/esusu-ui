@@ -107,7 +107,7 @@ async function fetchData() {
   ]
 }
 
-const page = () => {
+const Page = () => {
 
   const [data, setData] = useState<Log[]>([]);
 
@@ -216,4 +216,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

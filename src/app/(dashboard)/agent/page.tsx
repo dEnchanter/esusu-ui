@@ -128,7 +128,7 @@ async function fetchData() {
   ]
 }
 
-const page = () => {
+const Page = () => {
 
   const [data, setData] = useState<Agent[]>([]);
 
@@ -251,4 +251,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
