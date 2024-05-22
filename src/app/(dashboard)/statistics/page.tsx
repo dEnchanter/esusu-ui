@@ -125,6 +125,7 @@ const Page = () => {
               <BarChart className="w-full h-[300px]" />
             </CardContent>
           </Card>
+          
           <Card className="col-span-1">
             <CardContent className="p-3">
               <div className="flex justify-between">
